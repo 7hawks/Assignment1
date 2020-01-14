@@ -17,7 +17,7 @@ namespace SecretSanta.Business.Tests
             User user = new User(id, "billy", "bob");
             
             // act
-            Gift gift = new Gift(id, title, description, url);
+            Gift gift = new Gift(id, title, description, url, user);
 
             // assert
             Assert.AreEqual<string>(title, gift.Title, "test title");
@@ -27,11 +27,23 @@ namespace SecretSanta.Business.Tests
 
         [TestMethod]
         [ExpectedException(typeof(ArgumentNullException))]
-        public void Verify_PropertiesNotNull_NotNull()
+        public void Verify_TitlePropertyNotNull_NotNull()
         {
-            new Gift(1, null!, "description", "url");
+            new Gift(1, null!, "description", "url", new User(1, "billy", "bob"));
         }
 
-        
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentNullException))]
+        public void Verify_DescriptionPropertyNotNull_NotNull()
+        {
+            new Gift(1, "title", null!, "url", new User(1, "billy", "bob"));
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentNullException))]
+        public void Verify_UrlPropertyNotNull_NotNull()
+        {
+            new Gift(1, "title", "description", null!, new User(1, "billy", "bob"));
+        }
     }
 }
