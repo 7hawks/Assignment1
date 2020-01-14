@@ -4,7 +4,7 @@ using System.Text;
 
 namespace SecretSanta.Business
 {
-    class User
+    public class User
     {
         public int Id { get; }
         public string FirstName { get; set; }
@@ -17,6 +17,11 @@ namespace SecretSanta.Business
             FirstName = firstName;
             LastName = lastName;
             Gifts = gifts;
+        }
+
+        public User(int id, string firstName, string lastName)
+        {
+
         }
     }
 }
