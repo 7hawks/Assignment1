@@ -14,10 +14,16 @@ namespace SecretSanta.Business.Tests
             const string description = "description";
             const string url = "some url";
             User user = new User(id, "billy", "bob");
-            Gift h = new Gift();
+
             // act
+            Gift gift = new Gift(id, title, description, url, user);
 
             // assert
+            Assert.AreEqual<int>(id, gift.Id, "1");
+            Assert.AreEqual<string>(title, gift.Title, "test title");
+            Assert.AreEqual<string>(description, gift.Description, "description");
+            Assert.AreEqual<string>(url, gift.Url, "some url");
+
 
         }
     }
