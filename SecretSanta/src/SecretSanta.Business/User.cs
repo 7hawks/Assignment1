@@ -18,7 +18,5 @@ namespace SecretSanta.Business
             LastName = lastName;
             Gifts = new List<Gift>();
         }
-
-       
     }
 }
