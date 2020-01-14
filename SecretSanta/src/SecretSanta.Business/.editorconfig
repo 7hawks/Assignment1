@@ -1,0 +1,7 @@
+﻿[*.cs]
+
+# CA1056: Uri properties should not be strings
+dotnet_diagnostic.CA1056.severity = none
+
+# IDE0022: Use block body for methods
+csharp_style_expression_bodied_methods = false:none
