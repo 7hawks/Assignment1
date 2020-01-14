@@ -4,7 +4,7 @@ using System.Text;
 
 namespace SecretSanta.Business
 {
-    public class Gift
+    class Gift
     {
         public int Id { get; }
         public string Title { get; set; }
